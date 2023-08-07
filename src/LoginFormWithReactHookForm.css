@@ -1,0 +1,20 @@
+.LoginFormWithReactHookForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.LoginFormWithReactHookForm div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.LoginFormWithReactHookForm label{
+    flex-grow: 1;
+}
+.LoginFormWithReactHookForm input{
+    flex-grow: 3;
+}
+.LoginFormWithReactHookForm small{
+    text-align: end;
+}

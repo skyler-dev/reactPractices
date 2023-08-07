@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import './LoginFormWithReactHookForm.css'
 
 function LoginFormWithReactHookForm({ addUser }) {
   const {
@@ -24,43 +25,21 @@ function LoginFormWithReactHookForm({ addUser }) {
     },
   };
 
-  const style = {
-    form: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-    },
-    div: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-    },
-    label: {
-      flexGrow: '1',
-    },
-    input: {
-      flexGrow: '3',
-    },
-    message: {
-      textAlign: 'end',
-    },
-  };
 
   return (
     <form
-      style={style.form}
+      className='LoginFormWithReactHookForm'
       noValidate
       onSubmit={handleSubmit(async (data) => {
         await new Promise((r) => setTimeout(r, 1000)); // 중복 제출 방지 시각화
         return addUser(data);
       })}
     >
-      <div style={style.div}>
-        <label style={style.label} htmlFor='email'>
+      <div>
+        <label htmlFor='email'>
           이메일
         </label>
         <input
-          style={style.input}
           id='email'
           type='email'
           placeholder='test@email.com'
@@ -71,17 +50,16 @@ function LoginFormWithReactHookForm({ addUser }) {
         />
       </div>
       {errors.email && (
-        <small style={style.message} role='alert'>
+        <small role='alert'>
           {errors.email.message}
         </small>
       )}
 
-      <div style={style.div}>
-        <label style={style.label} htmlFor='password'>
+      <div>
+        <label htmlFor='password'>
           비밀번호
         </label>
         <input
-          style={style.input}
           id='password'
           type='password'
           placeholder='*******'
@@ -92,7 +70,7 @@ function LoginFormWithReactHookForm({ addUser }) {
         />
       </div>
       {errors.password && (
-        <small style={style.message} role='alert'>
+        <small role='alert'>
           {errors.password.message}
         </small>
       )}
