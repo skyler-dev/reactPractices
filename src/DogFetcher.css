@@ -1,0 +1,13 @@
+.DogFetcher{
+    width: 400px;
+}
+.DogFetcher img{
+    max-width: 100%;
+}
+.DogFetcher button{
+    display: block;
+    margin: 0 auto;
+}
+.DogFetcher p{
+    transition: 2s opacity;
+}
